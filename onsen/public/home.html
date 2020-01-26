@@ -1,0 +1,21 @@
+<ons-page id="home">
+
+  <ons-toolbar id="home-toolbar">
+
+    <div class="left">
+      <ons-toolbar-button onclick="openMenu()">
+        <ons-icon icon="md-menu"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+
+    <div class="center">Home</div>
+  </ons-toolbar>
+
+  Hello!
+
+  <script>
+    const openMenu = () => {
+      document.querySelector('#menu').open();
+    };
+  </script>
+</ons-page>

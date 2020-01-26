@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Page</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head>
+
+<body>
+  <ons-splitter>
+    <!-- The side menu -->
+    <ons-splitter-side id="menu" collapse width="220px">
+      <!-- @!playables name="playables list" model="playables"-->
+      <ons-page>
+        <ons-list-title>
+          <!--@{title}-->Available</ons-list-title>
+        <ons-list>
+          <!--@!each schedule in schedules-->
+          <ons-list-header>
+            <!--@{dateTime}-->Jan 20, 2020</ons-list-header>
+          <!--@!case schedule.playables && schedule.playbales.length > 0-->
+          <!--@!each playable in schedule.playables-->
+          <!--@!events=[onclick=loadPage(playable.page)]-->
+          <ons-list-item onclick="loadPage('playables.html')">
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+            </div>
+            <div class="center">
+              <span class="list-item__title">Gladiator</span><span class="list-item__subtitle">Championship</span>
+            </div>
+          </ons-list-item>
+          <!--/@!each-->
+          <!--@!case else expression-->
+          
+          <!--/@!case else-->
+
+          <!--/@!case-->
+          <!--@!baggage-->
+          <ons-list-item onclick="loadPage('summary.html')">
+            <div class="left">
+              <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+            </div>
+            <div class="center">
+              <span class="list-item__title">Manual Push</span><span class="list-item__subtitle">Training Ground </span>
+            </div>
+          </ons-list-item>
+          <!--/@!baggage-->
+          <!--/@!each-->
+        </ons-list>
+      </ons-page>
+      <!--/@!playables-->
+    </ons-splitter-side>
+
+    <!-- Everything not in the side menu -->
+    <ons-splitter-content>
+      <ons-navigator id="navigator" page="login.html"></ons-navigator>
+    </ons-splitter-content>
+  </ons-splitter>
+
+  <script>
+    const loadPage = (page) => {
+      document.querySelector('#menu').close();
+      document.querySelector('#navigator').bringPageTop(page, { animation: 'fade' });
+    };
+  </script>
+</body>
+
+</html>-

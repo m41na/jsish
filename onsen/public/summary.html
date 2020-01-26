@@ -1,0 +1,23 @@
+<ons-page id="playables">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button></ons-back-button>
+        </div>
+
+        <div class="center">Training Ground</div>
+    </ons-toolbar>
+
+    This is the summary page.
+
+    <script>
+        document.addEventListener('init', function (event) {
+            var page = event.target;
+            if (page.matches('#playables') {
+                // Set up page's dynamic content or behavior
+                page.querySelector('ons-toolbar .center').innerHTML = 'Title';
+                page.querySelector('ons-button').onclick = function () { };
+                // ...
+            }
+        });
+    </script>
+</ons-page>
